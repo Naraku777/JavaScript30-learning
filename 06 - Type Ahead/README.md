@@ -44,6 +44,7 @@ none | [inset? && [ <offset-x> <offset-y> <blur-radius>? <spread-radius>? <color
 
 #### [justify-content](https://developer.mozilla.org/zh-CN/docs/Web/CSS/justify-content)
 > `justify-content` 属性定义了浏览器如何分配顺着父容器主轴的弹性元素之间及其周围的空间。
+
 ```
 .suggestions li {
     ...
