@@ -15,7 +15,7 @@
 
 ## 知识点
 
-### CSS
+* ### CSS
 
 #### [box-sizing](https://developer.mozilla.org/zh-CN/docs/Web/CSS/box-sizing)
 > box-sizing 属性用来改变默认的 CSS 盒模型 对元素宽高的计算方式。
@@ -53,4 +53,16 @@ none | [inset? && [ <offset-x> <offset-y> <blur-radius>? <spread-radius>? <color
 ```
 `space-between` 致使均匀排列每个元素，首个元素放置于起点，末尾元素放置于终点。项目中的效果为地名和人口数量分别置于左右贴边。
 
+#### [transform](https://developer.mozilla.org/zh-CN/docs/Web/CSS/transform)
+> `transform` 属性允许你修改CSS可视化模型的坐标空间。通过transform，可以让元素进行移动（translate）、旋转（rotate）、缩放（scale）、倾斜（skew）。 
+
+```
+.suggestions li:nth-child(even) {
+    transform: perspective(100px) rotateX(3deg) translateY(2px) scale(1.001);
+    ...
+}
+```
+`perspective` 属性定义 3D 元素距视图的距离，实战中组合旋转位移缩放实现三维的效果，基偶的相反效果组合成折纸效果。
+
+* ### JS
 
