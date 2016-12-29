@@ -5,7 +5,6 @@
 > 
 > 作者该项目的 → [GitHub](https://github.com/soyaine/JavaScript30)
 
-***
 
 ## 实现效果
 1. 一个输入框，跟随其后的模拟折纸样式的输入提示列表。
@@ -13,8 +12,6 @@
 2. 实现预输入联想，通过在输入控件上的操作弹出匹配到的联想结果，并高亮显示匹配词。
 
 ![](http://p1.bpimg.com/567571/04e4c5d7ea17e2f4.jpg)
-
-***
 
 ## 知识点
 
@@ -70,3 +67,43 @@ none | [inset? && [ <offset-x> <offset-y> <blur-radius>? <spread-radius>? <color
 
 ### JS
 
+#### Fetch API 
+
+[[译] JavaScript Fetch API - 推酷](http://www.tuicool.com/articles/QZBJ7zJ)
+
+[在 JS 中使用 fetch 更加高效地进行网络请求](http://www.tuicool.com/articles/f63yUja)
+
+[ES6-fetch](http://www.cnblogs.com/ddfe/p/5609697.html)
+
+>在 AJAX 时代，进行请求 API 等网络请求都是通过 XMLHttpRequest 或者封装后的框架进行网络请求。现在产生的 fetch 框架简直就是为了提供更加强大、高效的网络请求而生。
+
+* Get
+
+```
+fetch('/test/content.json')
+    .then(function(data){
+        return data.json();
+    }).then(function(data){
+        console.log(data);
+    }).catch(function(error){
+        console.log(error);
+    });
+```
+
+* Post
+
+```
+fetch('/test/content.json', {
+        method: 'POST',
+        mode: 'same-origin', 
+        credentials: 'include', 
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded'},
+        body: 'a=1&b=2' 
+    }).then(function(res){
+        return res.json();
+    }).then(function(data){
+        console.log(data);
+    }).catch(function(error){
+        // handler error
+    });
+```
