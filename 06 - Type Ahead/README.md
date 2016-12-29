@@ -15,7 +15,7 @@
 
 ## 知识点
 
-* ### CSS
+### CSS
 
 #### [box-sizing](https://developer.mozilla.org/zh-CN/docs/Web/CSS/box-sizing)
 > box-sizing 属性用来改变默认的 CSS 盒模型 对元素宽高的计算方式。
@@ -64,5 +64,5 @@ none | [inset? && [ <offset-x> <offset-y> <blur-radius>? <spread-radius>? <color
 ```
 `perspective` 属性定义 3D 元素距视图的距离，实战中组合旋转位移缩放实现三维的效果，基偶的相反效果组合成折纸效果。
 
-* ### JS
+### JS
 
