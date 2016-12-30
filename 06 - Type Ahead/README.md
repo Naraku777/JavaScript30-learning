@@ -73,37 +73,46 @@ none | [inset? && [ <offset-x> <offset-y> <blur-radius>? <spread-radius>? <color
 
 [在 JS 中使用 fetch 更加高效地进行网络请求](http://www.tuicool.com/articles/f63yUja)
 
-[ES6-fetch](http://www.cnblogs.com/ddfe/p/5609697.html)
 
->在 AJAX 时代，进行请求 API 等网络请求都是通过 XMLHttpRequest 或者封装后的框架进行网络请求。现在产生的 fetch 框架简直就是为了提供更加强大、高效的网络请求而生。
+在 AJAX 时代，进行请求 API 等网络请求都是通过 XMLHttpRequest 或者封装后的框架进行网络请求。现在产生的 fetch 框架简直就是为了提供更加强大、高效的网络请求而生。
+
+在Fetch API中，最常用的就是fetch()函数。它接收一个URL参数，返回一个promise来处理response。response参数带着一个Response对象。
 
 * Get
 
 ```
-fetch('/test/content.json')
-    .then(function(data){
-        return data.json();
-    }).then(function(data){
-        console.log(data);
-    }).catch(function(error){
-        console.log(error);
+fetch("/data.json")
+    .then(function(res) {
+        // res instanceof Response == true.
+        if (res.ok) {
+            res.json().then(function(data) {
+            console.log(data.entries);
+            });
+        } else {
+            console.log("Looks like the response wasn't perfect, got status", res.status);
+        }
+    }, function(e) {
+        console.log("Fetch failed!", e);
     });
 ```
 
 * Post
 
 ```
-fetch('/test/content.json', {
-        method: 'POST',
-        mode: 'same-origin', 
-        credentials: 'include', 
-        headers: { 'Content-Type': 'application/x-www-form-urlencoded'},
-        body: 'a=1&b=2' 
-    }).then(function(res){
-        return res.json();
-    }).then(function(data){
-        console.log(data);
-    }).catch(function(error){
-        // handler error
+fetch("http://www.example.org/submit.php", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/x-www-form-urlencoded"
+        },
+        body: "firstName=Nikhil&favColor=blue&password=easytoguess"
+    })
+    .then(function(res) {
+        if (res.ok) {
+            alert("Perfect! Your settings are saved.");
+        } else if (res.status == 401) {
+            alert("Oops! You are not authorized.");
+        }
+    }, function(e) {
+        alert("Error submitting form!");
     });
 ```
