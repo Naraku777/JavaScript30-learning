@@ -171,93 +171,93 @@ myFunction(...iterableObj);
 
 1. 更好的 apply 方法
 
-在需要使用数组作为函数的参数的情况下,通常使用 Function.prototype.apply 方法:
+    在需要使用数组作为函数的参数的情况下,通常使用 Function.prototype.apply 方法:
 
-```
-function myFunction(x, y, z) { }
-var args = [0, 1, 2];
-myFunction.apply(null, args);
-```
+    ```
+    function myFunction(x, y, z) { }
+    var args = [0, 1, 2];
+    myFunction.apply(null, args);
+    ```
 
-如果使用了ES6的展开运算符,你可以这么写:
+    如果使用了ES6的展开运算符,你可以这么写:
 
-```
-function myFunction(x, y, z) { }
-var args = [0, 1, 2];
-myFunction(...args);
-```
+    ```
+    function myFunction(x, y, z) { }
+    var args = [0, 1, 2];
+    myFunction(...args);
+    ```
 
-还可以同时展开多个数组:
+    还可以同时展开多个数组:
 
-```
-function myFunction(v, w, x, y, z) { }
-var args = [0, 1];
-myFunction(-1, ...args, 2, ...[3]);
-```
+    ```
+    function myFunction(v, w, x, y, z) { }
+    var args = [0, 1];
+    myFunction(-1, ...args, 2, ...[3]);
+    ```
 
 2. 更强大的数组字面量
 
-例子:  如果已经有一个数组，此时还需要再新建一个数组，要求新数组包含已有数组的数组项的话，就要用到push，splice，concat 等数组方法。有了扩展运算符会让代码更简洁:
+    例子:  如果已经有一个数组，此时还需要再新建一个数组，要求新数组包含已有数组的数组项的话，就要用到push，splice，concat 等数组方法。有了扩展运算符会让代码更简洁:
 
-```
-var parts = ['shoulder', 'knees'];
-var lyrics = ['head', ...parts, 'and', 'toes']; // ["head", "shoulders", "knees", "and", "toes"]
-```
+    ```
+    var parts = ['shoulder', 'knees'];
+    var lyrics = ['head', ...parts, 'and', 'toes']; // ["head", "shoulders", "knees", "and", "toes"]
+    ```
 
-和函数调用一样,数组字面量中也可以使用...多次.
+    和函数调用一样,数组字面量中也可以使用...多次.
 
 3. 配合new运算符
 
-例子: 在ES5中,我们无法同时使用 new 运算符和 apply 方法(apply方法调用[[Call]]而不是[[Construct]])。在ES6中，我们可以使用扩展运算符，和普通的函数调用一样。
+    例子: 在ES5中,我们无法同时使用 new 运算符和 apply 方法(apply方法调用[[Call]]而不是[[Construct]])。在ES6中，我们可以使用扩展运算符，和普通的函数调用一样。
 
-```
-var dataFields = readDateFields(database);
-var d = new Date(...dateFields);
-```
+    ```
+    var dataFields = readDateFields(database);
+    var d = new Date(...dateFields);
+    ```
 
 4. 更好的 push 方法
 
-例子: 在ES5中，我们通常使用 push 方法将一个数组添加到另一个数组的末尾:
+    例子: 在ES5中，我们通常使用 push 方法将一个数组添加到另一个数组的末尾:
 
-```
-var arr1 = [0, 1, 2];
-var arr2 = [3, 4, 5];
-// 将arr2中的所有元素添加到arr1中
-Array.prototype.push.apply(arr1, arr2);
-```
+    ```
+    var arr1 = [0, 1, 2];
+    var arr2 = [3, 4, 5];
+    // 将arr2中的所有元素添加到arr1中
+    Array.prototype.push.apply(arr1, arr2);
+    ```
 
-在ES6中，使用扩展运算符：
+    在ES6中，使用扩展运算符：
 
-```
-var arr1 = [0, 1, 2];
-var arr2 = [3, 4, 5];
-arr1.push(...arr2);
-```
+    ```
+    var arr1 = [0, 1, 2];
+    var arr2 = [3, 4, 5];
+    arr1.push(...arr2);
+    ```
 
 5. 仅可遍历对象(iterables)可用
 
-```
-var obj = {"key1":"value1"};
-function myFunction(x) {
-    console.log(x); // undefined
-}
-myFunction(...obj);
-var args = [...obj];
-console.log(args, args.length) //[] 0
-```
+    ```
+    var obj = {"key1":"value1"};
+    function myFunction(x) {
+        console.log(x); // undefined
+    }
+    myFunction(...obj);
+    var args = [...obj];
+    console.log(args, args.length) //[] 0
+    ```
 
 6. 将类数组对象转换成数组
 
-扩展运算符可以将一个类数组对象中索引范围在[0,length)之间的所有属性的值添加到一个数组中,这样就可以得到一个真正的数组:
+    扩展运算符可以将一个类数组对象中索引范围在[0,length)之间的所有属性的值添加到一个数组中,这样就可以得到一个真正的数组:
 
-```
-var nodeList = document.querySelectorAll('div');
-var array = [...nodeList];
-```
+    ```
+    var nodeList = document.querySelectorAll('div');
+    var array = [...nodeList];
+    ```
 
-实战中 `cities.push(...data)` 将请求到的 json 数据 `push` 到定义的数据数组里。
+    实战中 `cities.push(...data)` 将请求到的 json 数据 `push` 到定义的数据数组里。
 
-正则表达式
+#### 正则表达式
 
 [js正则表达式基本语法(精粹)](http://www.jb51.net/article/72044.htm)
 
