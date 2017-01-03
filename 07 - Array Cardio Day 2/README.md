@@ -30,6 +30,7 @@
     * `callback` - 用来测试每个元素的函数。
     * `thisArg` - 执行 callback 时使用的 this 值。
 
+
     ```
     function isBigEnough(element, index, array) {
         return (element >= 10);
@@ -58,6 +59,7 @@
 
     * `callback` - 用来测试每个元素的函数。
     * `thisArg` - 执行 callback 时使用的 this 值。
+    
 
     ```
     function isBigEnough(element, index, array) {
@@ -193,6 +195,7 @@
     // comments.splice(index, 1);
 
     // es6
+
     const newComments = [
         ...comments.slice(0, index),
         ...comments.slice(index + 1)
@@ -201,4 +204,4 @@
     ```
 
     上面代码先找出符合条件的对象的index，非es6的方法是用 `arrayObject.splice(index,howmany,item1,.....,itemX)`
-    删除从查找对象index开始的总计1个元素。es6 则用对象展开扩展语句结合slice选择元素组合成新的数组。
+    删除从查找对象index开始的总计1个元素。es6 则用数组字面量结合 `arrayObject.slice(start,end)` 选择元素组合成新的数组。
