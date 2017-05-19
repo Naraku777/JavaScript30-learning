@@ -13,33 +13,18 @@
 ## 知识点
 
 
-### Regular 常规的 
-```js
-console.log()
-```
+### Regular 常规的 `console.log()`
 
-```js
-console.log()
-``` 
-向 web 控制台输出一条消息。
+`console.log()` 向 web 控制台输出一条消息。
 
-```js
-console.log('Hello, world.')
-``` 
-向控制台输出一行 "Hello, world."
+`console.log('Hello, world.')` 向控制台输出一行 "Hello, world."
 字符串
 
 ### Interpolated 在 log 的信息中插值
 
-可以在 
-```js
-console.log()
-``` 
-方法中通过参数指定输出字符串的格式
+可以在 `console.log()` 方法中通过参数指定输出字符串的格式
 
-```js
-console.log('Hello I am a %s string!', '💩');
-```
+`console.log('Hello I am a %s string!', '💩')`
 
 ↑ Hello I am a 💩 string!
 
@@ -66,9 +51,7 @@ console.log('%c I am some great text', 'font-size:50px; background:red; text-sha
 
 ### Warning 警告信息
 
-```js
-console.warn('OH NOOO');
-``` 输出警告信息 "ON NOOO"。
+`console.warn('OH NOOO')` 输出警告信息 "ON NOOO"。
 有感叹号标志，切显示为黄色字体。
 
 ↑ 结果
@@ -77,9 +60,7 @@ console.warn('OH NOOO');
 
 ### Error 错误信息
 
-```js
-console.error('Shit!')
-``` 向 web 控制台输出一条错误消息 "Shit!" （作者真的不是卖萌吗 - -。）
+`console.error('Shit!')` 向 web 控制台输出一条错误消息 "Shit!" （作者真的不是卖萌吗 - -。）
 
 ### Info 说明信息
 
@@ -94,9 +75,7 @@ const p = document.querySelector('p');
 console.assert(p.classList.contains('ouch'), 'That is wrong!');
 ```
 
-```js
-console.assert()
-``` 接收至少两个参数，第一个参数的值或返回值为false的时候，将会在控制台上输出后续参数的值。
+`console.assert()` 接收至少两个参数，第一个参数的值或返回值为false的时候，将会在控制台上输出后续参数的值。
 
 ### Clearing 清空输出
 
@@ -132,9 +111,7 @@ dogs.forEach(dog => {
 
 ![](http://i1.piimg.com/567571/64a9f1b76990ca79.jpg)
 
-```js
-groupCollapsed()
-``` 能够让控制台输出的语句产生不同的层级嵌套关系，以 `groupEnd()` 退回一层。
+`groupCollapsed()` 能够让控制台输出的语句产生不同的层级嵌套关系，以 `groupEnd()` 退回一层。
 
 ### Counting 计数
 
@@ -155,9 +132,7 @@ console.count('Steve');
 
 ![](http://i1.piimg.com/567571/8a2c44e59d6ac404.jpg)
 
-```js
-count()
-``` 输出执行到该行的次数，可选参数 label 可以输出在次数之前
+`count()` 输出执行到该行的次数，可选参数 label 可以输出在次数之前
 
 ### timing 计时器
 
