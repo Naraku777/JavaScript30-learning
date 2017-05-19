@@ -15,16 +15,25 @@
 
 ### Regular 常规的 `console.log()`
 
-`console.log()` 向 web 控制台输出一条消息。
+```js
+console.log()
+``` 向 web 控制台输出一条消息。
 
-`console.log('Hello, world.')` 向控制台输出一行 "Hello, world."
+```js
+console.log('Hello, world.')
+``` 向控制台输出一行 "Hello, world."
 字符串
 
 ### Interpolated 在 log 的信息中插值
 
-可以在 `console.log()` 方法中通过参数指定输出字符串的格式
+可以在 
+```js
+console.log()
+``` 方法中通过参数指定输出字符串的格式
 
-`console.log('Hello I am a %s string!', '💩');`
+```js
+console.log('Hello I am a %s string!', '💩');
+```
 
 ↑ Hello I am a 💩 string!
 
@@ -39,7 +48,9 @@
 
 ### Styled 输出样式
 
-`console.log('%c I am some great text', 'font-size:50px; background:red; text-shadow: 10px 10px 0 blue')`
+```js
+console.log('%c I am some great text', 'font-size:50px; background:red; text-shadow: 10px 10px 0 blue')
+```
 
 ↑ 结果
 
@@ -49,7 +60,9 @@
 
 ### Warning 警告信息
 
-`console.warn('OH NOOO');` 输出警告信息 "ON NOOO"。
+```js
+console.warn('OH NOOO');
+``` 输出警告信息 "ON NOOO"。
 有感叹号标志，切显示为黄色字体。
 
 ↑ 结果
@@ -58,7 +71,9 @@
 
 ### Error 错误信息
 
-`console.error('Shit!')` 向 web 控制台输出一条错误消息 "Shit!" （作者真的不是卖萌吗 - -。）
+```js
+console.error('Shit!')
+``` 向 web 控制台输出一条错误消息 "Shit!" （作者真的不是卖萌吗 - -。）
 
 ### Info 说明信息
 
@@ -68,12 +83,14 @@
 
 ### Testing 测试值
 
-```
+```js
 const p = document.querySelector('p');
 console.assert(p.classList.contains('ouch'), 'That is wrong!');
 ```
 
-`console.assert()` 接收至少两个参数，第一个参数的值或返回值为false的时候，将会在控制台上输出后续参数的值。
+```js
+console.assert()
+``` 接收至少两个参数，第一个参数的值或返回值为false的时候，将会在控制台上输出后续参数的值。
 
 ### Clearing 清空输出
 
@@ -85,7 +102,7 @@ Orz 就是清空了
 
 ### Viewing DOM Elements 查看 DOM 元素
 
-```
+```js
 console.log(p);
 console.dir(p);
 ```
@@ -97,7 +114,7 @@ console.dir(p);
 
 ### Grouping together 组
 
-```
+```js
 dogs.forEach(dog => {
     console.groupCollapsed(`${dog.name}`);
     console.log(`This is ${dog.name}`);
@@ -109,11 +126,13 @@ dogs.forEach(dog => {
 
 ![](http://i1.piimg.com/567571/64a9f1b76990ca79.jpg)
 
-`groupCollapsed()` 能够让控制台输出的语句产生不同的层级嵌套关系，以 `groupEnd()` 退回一层。
+```js
+groupCollapsed()
+``` 能够让控制台输出的语句产生不同的层级嵌套关系，以 `groupEnd()` 退回一层。
 
 ### Counting 计数
 
-```
+```js
 console.count('Wes');
 console.count('Wes');
 console.count('Steve');
@@ -130,11 +149,13 @@ console.count('Steve');
 
 ![](http://i1.piimg.com/567571/8a2c44e59d6ac404.jpg)
 
-`count()` 输出执行到该行的次数，可选参数 label 可以输出在次数之前
+```js
+count()
+``` 输出执行到该行的次数，可选参数 label 可以输出在次数之前
 
 ### timing 计时器
 
-```
+```js
 console.time('fetching data');
 fetch('https://api.github.com/users/wesbos')
     .then(data => data.json())
