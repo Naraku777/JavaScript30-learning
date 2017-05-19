@@ -31,7 +31,7 @@
     * `thisArg` - 执行 callback 时使用的 this 值。
 
 
-    ```
+    ```js
     function isBigEnough(element, index, array) {
         return (element >= 10);
     }
@@ -43,7 +43,7 @@
 
     因此，实践中至少有一人19岁代码如下：
 
-    ```
+    ```js
     const isAdult = people.some(
         person => ((new Date()).getFullYear()) - person.year >= 19
     );
@@ -61,7 +61,7 @@
     * `thisArg` - 执行 callback 时使用的 this 值。
     
 
-    ```
+    ```js
     function isBigEnough(element, index, array) {
         return (element >= 10);
     }
@@ -73,7 +73,7 @@
     
     因此，实践中是否成员都19岁以上代码如下：
 
-    ```
+    ```js
     const allAdults = people.every(
         person => ((new Date()).getFullYear - person.year >= 19)
     );
@@ -107,7 +107,7 @@
 
     #### 用对象的属性查找数组里的对象
 
-    ```
+    ```js
     var inventory = [
         {name: 'apples', quantity: 2},
         {name: 'bananas', quantity: 0},
@@ -123,7 +123,7 @@
 
     #### 寻找数组中的质数
 
-    ````
+    ````js
     function isPrime(element, index, array) {
         var start = 2;
         while (start <= Math.sqrt(element)) {
@@ -140,7 +140,7 @@
 
     因此实践中代码为
 
-    ```
+    ```js
     const comment = comments.find(comment => comment.id === 823423);
     console.log(comment); // => Object {text: "Super good", id: 823423}
     ```
@@ -173,7 +173,7 @@
 
     #### 查找数组中首个质数元素的索引
 
-    ```
+    ```js
     function isPrime(element, index, array) {
     var start = 2;
     while (start <= Math.sqrt(element)) {
@@ -188,7 +188,7 @@
 
     因此实践中代码为
 
-    ```
+    ```js
     const index = comments.findIndex(comment => comment.id === 823423);
     console.log(index); // => 1
 
