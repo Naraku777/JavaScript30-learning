@@ -37,7 +37,7 @@ input.search {
     box-shadow: 0 0 5px rgba(0, 0, 0, .12), inset 0 0 2px rgba(0, 0, 0, .19)
 }
 ```
-```
+```css
 none | [inset? && [ <offset-x> <offset-y> <blur-radius>? <spread-radius>? <color>? ] ]#
 ```
 `inset` 为内阴影。
@@ -267,7 +267,7 @@ const regex = new RegExp(wordToMatch, 'gi');
 
 `'gi'` 声明一个全局匹配，并且忽略大小写。
 
-```
+```js
 const regex = new RegExp(this.value, 'gi');
 const cityName = place.city.replace(regex, `<span class="hl">${this.value}</span>`);
 const stateName = place.state.replace(regex, `<span class="hl">${this.value}</span>`);
