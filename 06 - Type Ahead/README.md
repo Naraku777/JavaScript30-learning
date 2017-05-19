@@ -20,7 +20,7 @@
 #### [box-sizing](https://developer.mozilla.org/zh-CN/docs/Web/CSS/box-sizing)
 > box-sizing 属性用来改变默认的 CSS 盒模型 对元素宽高的计算方式。
 
-```html
+```css
 html {
     box-sizing: border-box;
     ...
