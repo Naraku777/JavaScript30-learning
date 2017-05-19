@@ -20,7 +20,7 @@
 #### [box-sizing](https://developer.mozilla.org/zh-CN/docs/Web/CSS/box-sizing)
 > box-sizing 属性用来改变默认的 CSS 盒模型 对元素宽高的计算方式。
 
-```
+```html
 html {
     box-sizing: border-box;
     ...
@@ -31,7 +31,7 @@ html {
 #### [box-shadow](https://developer.mozilla.org/zh-CN/docs/Web/CSS/box-shadow)
 > `box-shadow` 以逗号分割列表来描述一个或多个阴影效果。
 
- ```
+ ```css
 input.search {
     ...
     box-shadow: 0 0 5px rgba(0, 0, 0, .12), inset 0 0 2px rgba(0, 0, 0, .19)
@@ -45,7 +45,7 @@ none | [inset? && [ <offset-x> <offset-y> <blur-radius>? <spread-radius>? <color
 #### [justify-content](https://developer.mozilla.org/zh-CN/docs/Web/CSS/justify-content)
 > `justify-content` 属性定义了浏览器如何分配顺着父容器主轴的弹性元素之间及其周围的空间。
 
-```
+```css
 .suggestions li {
     ...
     justify-content: space-between;
@@ -57,7 +57,7 @@ none | [inset? && [ <offset-x> <offset-y> <blur-radius>? <spread-radius>? <color
 #### [transform](https://developer.mozilla.org/zh-CN/docs/Web/CSS/transform)
 > `transform` 属性允许你修改CSS可视化模型的坐标空间。通过transform，可以让元素进行移动（translate）、旋转（rotate）、缩放（scale）、倾斜（skew）。 
 
-```
+```css
 .suggestions li:nth-child(even) {
     transform: perspective(100px) rotateX(3deg) translateY(2px) scale(1.001);
     ...
@@ -81,7 +81,7 @@ none | [inset? && [ <offset-x> <offset-y> <blur-radius>? <spread-radius>? <color
 
 * Get
 
-```
+```js
 fetch("/data.json")
     .then(function(res) {
         // res instanceof Response == true.
@@ -99,7 +99,7 @@ fetch("/data.json")
 
 * Post
 
-```
+```js
 fetch("http://www.example.org/submit.php", {
         method: "POST",
         headers: {
@@ -120,7 +120,7 @@ fetch("http://www.example.org/submit.php", {
 
 本章节实战中：
 
-```
+```js
 fetch(endpoint)
     .then(blob => blob.json())
     .then(data => cities.push(...data));
@@ -136,7 +136,7 @@ fetch(endpoint)
 
 你可以通过Request构造器函数创建一个新的请求对象，这也是建议标准的一部分。 第一个参数是请求的URL，第二个参数是一个选项对象，用于配置请求。请求对象一旦创建了， 你便可以将所创建的对象传递给fetch()方法，用于替代默认的URL字符串。示例代码如下：
 
-```
+```js
 var req = new Request(URL, {method: 'GET', cache: 'reload'});  
 fetch(req).then(function (response) {
     return response.json();
@@ -159,13 +159,13 @@ fetch(req).then(function (response) {
 
 * 用于函数调用
 
-```
+```js
 myFunction(...iterableObj);
 ```
 
 * 用于数组字面量
 
-```
+```js
 [...iterableObj, 4, 5, 6]
 ```
 
@@ -173,7 +173,7 @@ myFunction(...iterableObj);
 
     在需要使用数组作为函数的参数的情况下,通常使用 Function.prototype.apply 方法:
 
-    ```
+    ```js
     function myFunction(x, y, z) { }
     var args = [0, 1, 2];
     myFunction.apply(null, args);
@@ -181,7 +181,7 @@ myFunction(...iterableObj);
 
     如果使用了ES6的展开运算符,你可以这么写:
 
-    ```
+    ```js
     function myFunction(x, y, z) { }
     var args = [0, 1, 2];
     myFunction(...args);
@@ -189,7 +189,7 @@ myFunction(...iterableObj);
 
     还可以同时展开多个数组:
 
-    ```
+    ```js
     function myFunction(v, w, x, y, z) { }
     var args = [0, 1];
     myFunction(-1, ...args, 2, ...[3]);
@@ -199,7 +199,7 @@ myFunction(...iterableObj);
 
     例子:  如果已经有一个数组，此时还需要再新建一个数组，要求新数组包含已有数组的数组项的话，就要用到push，splice，concat 等数组方法。有了扩展运算符会让代码更简洁:
 
-    ```
+    ```js
     var parts = ['shoulder', 'knees'];
     var lyrics = ['head', ...parts, 'and', 'toes']; // ["head", "shoulders", "knees", "and", "toes"]
     ```
@@ -210,7 +210,7 @@ myFunction(...iterableObj);
 
     例子: 在ES5中,我们无法同时使用 new 运算符和 apply 方法(apply方法调用[[Call]]而不是[[Construct]])。在ES6中，我们可以使用扩展运算符，和普通的函数调用一样。
 
-    ```
+    ```js
     var dataFields = readDateFields(database);
     var d = new Date(...dateFields);
     ```
@@ -219,7 +219,7 @@ myFunction(...iterableObj);
 
     例子: 在ES5中，我们通常使用 push 方法将一个数组添加到另一个数组的末尾:
 
-    ```
+    ```js
     var arr1 = [0, 1, 2];
     var arr2 = [3, 4, 5];
     // 将arr2中的所有元素添加到arr1中
@@ -228,7 +228,7 @@ myFunction(...iterableObj);
 
     在ES6中，使用扩展运算符：
 
-    ```
+    ```js
     var arr1 = [0, 1, 2];
     var arr2 = [3, 4, 5];
     arr1.push(...arr2);
@@ -236,7 +236,7 @@ myFunction(...iterableObj);
 
 5. 仅可遍历对象(iterables)可用
 
-    ```
+    ```js
     var obj = {"key1":"value1"};
     function myFunction(x) {
         console.log(x); // undefined
@@ -250,7 +250,7 @@ myFunction(...iterableObj);
 
     扩展运算符可以将一个类数组对象中索引范围在[0,length)之间的所有属性的值添加到一个数组中,这样就可以得到一个真正的数组:
 
-    ```
+    ```js
     var nodeList = document.querySelectorAll('div');
     var array = [...nodeList];
     ```
@@ -261,7 +261,7 @@ myFunction(...iterableObj);
 
 [js正则表达式基本语法(精粹)](http://www.jb51.net/article/72044.htm)
 
-```
+```js
 const regex = new RegExp(wordToMatch, 'gi');
 ```
 
