@@ -13,15 +13,20 @@
 ## 知识点
 
 
-### Regular 常规的 `console.log()`
+### Regular 常规的 
+```js
+console.log()
+```
 
 ```js
 console.log()
-``` 向 web 控制台输出一条消息。
+``` 
+向 web 控制台输出一条消息。
 
 ```js
 console.log('Hello, world.')
-``` 向控制台输出一行 "Hello, world."
+``` 
+向控制台输出一行 "Hello, world."
 字符串
 
 ### Interpolated 在 log 的信息中插值
@@ -29,7 +34,8 @@ console.log('Hello, world.')
 可以在 
 ```js
 console.log()
-``` 方法中通过参数指定输出字符串的格式
+``` 
+方法中通过参数指定输出字符串的格式
 
 ```js
 console.log('Hello I am a %s string!', '💩');
